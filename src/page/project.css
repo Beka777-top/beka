@@ -1,0 +1,53 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    background-color: #9accfe;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1530px;
+}
+.logo{
+    width: 100px;
+    margin-left: 100px;
+    border-radius: 25%;
+}
+.nav{
+    display: flex;
+    gap: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-content: space-around;
+}
+.nav ul {
+    display: flex;
+    gap: 190px;
+}
+
+.nav li {
+    font-size: 20px;
+    list-style-type: none;
+}
+.blog-container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog-post {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#root{
+    margin-bottom: 450px;
+}
