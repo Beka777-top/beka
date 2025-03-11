@@ -3,7 +3,6 @@ import Header from "./Header";
 import BlogPost from "./BlogPost";
 import NewPostForm from "./NewPostForm";
 import Footer from "./Footer";
-import "./App.css"; 
 
 const App = () => {
   const [posts, setPosts] = useState([]);
