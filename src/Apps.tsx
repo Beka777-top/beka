@@ -67,31 +67,188 @@ const App = () => {
           alt="Avatar"
           style={styles.avatar}
         />
-        <h1 style={styles.name}>John Doe</h1>
+        <h1 style={styles.name}>Begarys Nurbolat</h1>
         <p style={styles.bio}>
-          Hi, I'm John! I'm a web developer passionate about building amazing user experiences.
+          Hi, I'm Begarys! I'm a web developer passionate about building amazing user experiences.
         </p>
       </section>
+
 
       {/* Projects Section */}
       <section id="projects" style={styles.projects}>
         <h2 style={styles.sectionTitle}>Featured Projects</h2>
         <div style={styles.projectGrid}>
+          {/* Project 1 - Updated with detailed information */}
           <div style={styles.projectCard}>
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
+            <h3>Online Store Platform</h3>
+            <p>
+              This project is a web application for managing an online store. The platform allows users to purchase products, view purchase history, and search for products across various categories.
+            </p>
+            <p>
+              <strong>Key Features:</strong>
+              <ul>
+                <li>User registration and authentication</li>
+                <li>Product search and filtering</li>
+                <li>Adding products to cart and checkout</li>
+                <li>Admin panel for managing products</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Technologies Used:</strong> React, Node.js, Express, MongoDB, Redux
+            </p>
+            <p>
+              <strong>Links:</strong>{' '}
+              <a
+                href="https://github.com/yourusername/online-store"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository
+              </a>{' '}
+              |{' '}
+              <a
+                href="https://onlinestoreexample.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </p>
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Online Store Screenshot"
+              style={{ width: '100%', borderRadius: '5px', marginTop: '10px' }}
+            />
           </div>
+
+          {/* Project 2 - Updated with detailed information */}
           <div style={styles.projectCard}>
-            <h3>Project 2</h3>
-            <p>Description of Project 2.</p>
+            <h3>Blog Platform</h3>
+            <p>
+              This project is a platform for writing and reading blogs. Users can create their own articles, leave comments, and read articles from other authors.
+            </p>
+            <p>
+              <strong>Key Features:</strong>
+              <ul>
+                <li>Create and edit articles</li>
+                <li>Leave comments on articles</li>
+                <li>Search and filter articles</li>
+                <li>User profile management</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Technologies Used:</strong> Next.js, Firebase, TailwindCSS
+            </p>
+            <p>
+              <strong>Links:</strong>{' '}
+              <a
+                href="https://github.com/yourusername/blog-platform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository
+              </a>{' '}
+              |{' '}
+              <a
+                href="https://blogplatformexample.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </p>
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Blog Platform Screenshot"
+              style={{ width: '100%', borderRadius: '5px', marginTop: '10px' }}
+            />
           </div>
+
+
+          {/* Project 3 - Updated with detailed information */}
           <div style={styles.projectCard}>
-            <h3>Project 3</h3>
-            <p>Description of Project 3.</p>
+            <h3>Task Manager</h3>
+            <p>
+              This project is a task management application that helps users organize their daily tasks. Users can add, edit, and mark tasks as completed.
+            </p>
+            <p>
+              <strong>Key Features:</strong>
+              <ul>
+                <li>Add, edit, and delete tasks</li>
+                <li>Mark tasks as completed</li>
+                <li>Search and filter tasks</li>
+                <li>Daily reminders</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Technologies Used:</strong> Vue.js, Firebase, Vuetify
+            </p>
+            <p>
+              <strong>Links:</strong>{' '}
+              <a
+                href="https://github.com/yourusername/task-manager"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository
+              </a>{' '}
+              |{' '}
+              <a
+                href="https://taskmanagerexample.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </p>
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Task Manager Screenshot"
+              style={{ width: '100%', borderRadius: '5px', marginTop: '10px' }}
+            />
           </div>
+
+          {/* Project 4 - Updated with detailed information */}
           <div style={styles.projectCard}>
-            <h3>Project 4</h3>
-            <p>Description of Project 4.</p>
+            <h3>Movie Platform</h3>
+            <p>
+              This project is a platform for exploring movies and TV shows. Users can search for movies, read descriptions, and leave reviews.
+            </p>
+            <p>
+              <strong>Key Features:</strong>
+              <ul>
+                <li>Search and filter movies</li>
+                <li>Detailed movie information</li>
+                <li>User reviews and ratings</li>
+                <li>Top-rated movies list</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Technologies Used:</strong> Angular, TMDB API, Bootstrap
+            </p>
+            <p>
+              <strong>Links:</strong>{' '}
+              <a
+                href="https://github.com/yourusername/movie-platform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository
+              </a>{' '}
+              |{' '}
+              <a
+                href="https://movieplatformexample.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </p>
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Movie Platform Screenshot"
+              style={{ width: '100%', borderRadius: '5px', marginTop: '10px' }}
+            />
           </div>
         </div>
       </section>
