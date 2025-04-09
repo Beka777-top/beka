@@ -18,13 +18,14 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
+@keyframes logo-spin {x
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+  /* This is a comment */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -39,4 +40,5 @@
 
 .read-the-docs {
   color: #888;
+  
 }

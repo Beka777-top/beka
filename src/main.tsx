@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './test/Book-React/App';
+import App from './home/home09.04/Main';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
 import Login from "./Login";
-import Home from "./Home";
 import BookGallery from "./BookGallery";
 import BookDetail from "./BookDetail";
 import ProtectedRoute from "./ProtectedRoute";
@@ -40,7 +39,6 @@ export default function App() {
             path="/home"
             element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <Home />
               </ProtectedRoute>
             }
           />
