@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "home/home.06.03"]
+  "include": ["src", "src/home/home.06.03"]
 }
