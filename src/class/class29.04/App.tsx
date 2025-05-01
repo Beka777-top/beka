@@ -88,14 +88,15 @@ const App = () => {
             <li className="text-gray-500">Почитать</li>
           </ul>
         </nav>
+
         <nav>
-          <ul className="mb-4">
+          <ul className="flex space-x-4 mb-4">
             <li className="text-gray-500">Главная</li>
             <li className="text-gray-500">Легковые</li>
             <li className="text-gray-500">Седаны</li>
             <li className="text-gray-500">Седаны купить в кредит</li>
-            <li className="text-gray-500">Toyota</li>
-            <li className="text-gray-500">Toyota Camry</li>
+            <li className="text-gray-500">Lexus</li>
+            <li className="text-gray-500">Lexus GS350</li>
           </ul>
         </nav>
 
