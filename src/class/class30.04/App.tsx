@@ -51,8 +51,8 @@ const GeminiSearch = () => {
   };
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <h2>Gemini AI Поиск</h2>
+    <div className="p-8 font-sans">
+      <h2 className="text-2xl font-bold mb-4">Gemini AI Поиск</h2>
 
       <input
         type="text"
@@ -60,22 +60,24 @@ const GeminiSearch = () => {
         onChange={handleInputChange}
         onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
         placeholder="Введите запрос"
-        style={{ width: '300px', padding: '8px' }}
+        className="w-72 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
       <button
         onClick={handleSearch}
         disabled={loading}
-        style={{ marginLeft: '10px', padding: '8px 12px' }}
+        className={`ml-4 px-4 py-2 rounded-md text-white ${
+          loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'
+        }`}
       >
         {loading ? 'Загрузка...' : 'Поиск'}
       </button>
 
-      {error && <p style={{ color: 'red', marginTop: '1rem' }}>{error}</p>}
+      {error && <p className="text-red-500 mt-4">{error}</p>}
 
       {response && (
-        <div style={{ marginTop: '1.5rem', whiteSpace: 'pre-wrap' }}>
-          <h3>Ответ:</h3>
+        <div className="mt-6 p-4 bg-gray-100 border border-gray-300 rounded-md">
+          <h3 className="text-lg font-semibold mb-2">Ответ:</h3>
           <p>{response}</p>
         </div>
       )}
