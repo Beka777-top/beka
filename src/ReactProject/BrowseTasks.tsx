@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./Style.css";
+
 
 const initialTasks = [
   { title: "Принять брифинг", price: "$60", posted: "25 мин назад" },
@@ -47,36 +49,31 @@ export default function BrowseTasks({ onTakeTask, takenTasks }) {
   };
 
   return (
-    <div>
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Просмотр задач</h2>
-        <button
-          onClick={handleChangeTasks}
-          className="bg-black text-white px-4 py-2 rounded"
-        >
-          Обновить задачи
-        </button>
-      </div>
-      {tasks.length === 0 ? (
-        <p>Нет доступных задач</p>
-      ) : (
-        <div className="space-y-3">
-          {tasks.map((task, idx) => (
-            <div key={idx} className="border p-4 rounded shadow flex justify-between items-center">
-              <div>
-                <h3 className="font-semibold">{task.title}</h3>
-                <p className="text-sm">{task.price} – {task.posted}</p>
-              </div>
-              <button
-                onClick={() => handleTakeTask(idx)}
-                className="bg-red-600 text-white px-4 py-2 rounded"
-              >
-                Взять
-              </button>
-            </div>
-          ))}
+<div className="glass">
+  <div className="flex justify-between items-center mb-4">
+    <h2 className="text-2xl font-bold">Просмотр задач</h2>
+    <button onClick={handleChangeTasks} className="btn">
+      Обновить задачи
+    </button>
+  </div>
+  {tasks.length === 0 ? (
+    <p>Нет доступных задач</p>
+  ) : (
+    <div className="space-y-3">
+      {tasks.map((task, idx) => (
+        <div key={idx} className="glass flex justify-between items-center">
+          <div>
+            <h3>{task.title}</h3>
+            <p>{task.price} – {task.posted}</p>
+          </div>
+          <button onClick={() => handleTakeTask(idx)} className="btn">
+            Взять
+          </button>
         </div>
-      )}
+      ))}
     </div>
+  )}
+</div>
+
   );
 }

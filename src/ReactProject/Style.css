@@ -1,0 +1,365 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+  background: url('https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 40px;
+  color: white;
+  background-image: url('./ChatGPT\ Image\ May\ 6\,\ 2025\,\ 04_34_45\ PM.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.head-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 20px;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.head-nav a:hover {
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: black;
+}
+
+.btn:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.btn:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+.btn-logout {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-logout:hover {
+  background: darkred;
+}
+
+.text{
+  color: white;
+  font-size: 4rem;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #767676;
+  color: #e2e8f0;
+  padding: 2rem 0;
+}
+
+.footer a {
+  color: #63b3ed;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff; 
+  text-decoration: underline;
+}
+
+.footer i {
+  font-size: 1.25rem;
+  margin: 0 0.5rem;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 40px;
+  color: white;
+  background-image: url('./ChatGPT\ Image\ May\ 6\,\ 2025\,\ 04_34_45\ PM.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.head-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-left: 20px;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.head-nav a:hover {
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: black;
+}
+
+.btn:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.btn:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+.form input, .form textarea {
+  width: 98%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+  
+.form select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+h1, h2, h3 {
+  color: white;
+}
+
+p, label {
+  color: #ddd;
+}
+
+.radio-input input {
+  display: none;
+}
+
+.radio-input {
+  --container_width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000000;
+  width: var(--container_width);
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+}
+
+.radio-input label {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 14px;
+}
+
+.selection {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(var(--container_width) / 2);
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: 0.15s ease;
+}
+
+.radio-group {
+  margin: 9px;
+}
+
+.radio-input label:has(input:checked) {
+  color: #fff;
+}
+  
+.radio-input label:has(input:checked) ~ .selection {
+  background-color: rgb(11 117 223);
+  display: inline-block;
+}
+
+.radio-input label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 0 / 2));
+}
+  
+.radio-input label:nth-child(2):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 1 / 2));
+}
+
+
+.landing-container {
+  margin: 17rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.landing-title {
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.landing-subtitle {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+.footer {
+  background-color: #767676;
+  color: #e2e8f0;
+    padding: 2rem 0;
+}
+
+.footer a {
+  color: #63b3ed;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff; 
+  text-decoration: underline;
+}
+
+.footer i {
+  font-size: 1.25rem;
+  margin: 0 0.5rem;
+}
+.chat-box {
+  height: 24rem; 
+  overflow-y: auto;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #ffffff; 
+}
+.chat-box p{
+  color: #000000;
+}
+
+.chat-box .self-end {
+  align-self: flex-end; 
+}
+
+.chat-box .self-start {
+  align-self: flex-start; 
+}

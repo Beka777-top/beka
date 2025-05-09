@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const GeminiSearch = () => {
   const [input, setInput] = useState('');
-  const [response, setResponse] = useState('');
+  const [messages, setMessages] = useState([]); // Сұрақтар мен жауаптарды сақтау
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -14,9 +14,12 @@ const GeminiSearch = () => {
   const handleSearch = async () => {
     if (!input.trim()) return;
 
+    const userMessage = { sender: 'user', text: input }; // Пайдаланушының хабарламасы
+    setMessages((prev) => [...prev, userMessage]); // Хабарламаны қосу
+    setInput(''); // Инпутты тазалау
+
     setLoading(true);
     setError(null);
-    setResponse('');
 
     try {
       const res = await axios.post(
@@ -38,49 +41,80 @@ const GeminiSearch = () => {
       const generatedText = res?.data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
       if (generatedText) {
-        setResponse(generatedText);
+        const botMessage = { sender: 'bot', text: generatedText }; // Боттың жауабы
+        setMessages((prev) => [...prev, botMessage]); // Жауапты қосу
       } else {
-        setResponse('Ответ пустой или неожиданной структуры.');
+        setMessages((prev) => [
+          ...prev,
+          { sender: 'bot', text: 'Ответ пустой или неожиданной структуры.' },
+        ]);
       }
     } catch (err) {
       console.error(err);
-      setError('Ошибка при запросе к Gemini API');
+      setError('Ошибка при запросе к QazaqSmart Chat');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="p-8 font-sans">
-      <h2 className="text-2xl font-bold mb-4">Gemini AI Поиск</h2>
+    <div className="flex flex-col justify-between h-screen bg-black text-white font-sans">
+      {/* Header */}
+      <div className="p-4 bg-gray-900 shadow-md">
+        <h2 className="text-xl font-bold">QazaqSmart Chat</h2>
+      </div>
 
-      <input
-        type="text"
-        value={input}
-        onChange={handleInputChange}
-        onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-        placeholder="Введите запрос"
-        className="w-72 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+      {/* Chat Area */}
+      <div className="flex-1 overflow-y-auto p-4">
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`mb-4 ${
+              message.sender === 'user' ? 'text-right' : 'text-left'
+            }`}
+          >
+            <div
+              className={`inline-block p-3 rounded-lg text-sm ${
+                message.sender === 'user'
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-800 text-white'
+              }`}
+            >
+              <p>{message.text}</p>
+            </div>
+          </div>
+        ))}
+        {error && (
+          <div className="mb-4">
+            <p className="text-red-400 text-sm">{error}</p>
+          </div>
+        )}
+      </div>
 
-      <button
-        onClick={handleSearch}
-        disabled={loading}
-        className={`ml-4 px-4 py-2 rounded-md text-white ${
-          loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'
-        }`}
-      >
-        {loading ? 'Загрузка...' : 'Поиск'}
-      </button>
-
-      {error && <p className="text-red-500 mt-4">{error}</p>}
-
-      {response && (
-        <div className="mt-6 p-4 bg-gray-100 border border-gray-300 rounded-md">
-          <h3 className="text-lg font-semibold mb-2">Ответ:</h3>
-          <p>{response}</p>
+      {/* Input Area */}
+      <div className="p-4 bg-gray-900">
+        <div className="flex items-center">
+          <input
+            type="text"
+            value={input}
+            onChange={handleInputChange}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+            placeholder="Введите сообщение..."
+            className="flex-1 p-2 rounded-lg bg-gray-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"
+          />
+          <button
+            onClick={handleSearch}
+            disabled={loading}
+            className={`ml-2 px-4 py-2 rounded-lg text-sm ${
+              loading
+                ? 'bg-gray-600 cursor-not-allowed'
+                : 'bg-blue-500 hover:bg-blue-600 text-white'
+            }`}
+          >
+            {loading ? '...' : 'Отправить'}
+          </button>
         </div>
-      )}
+      </div>
     </div>
   );
 };
